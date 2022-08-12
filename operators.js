@@ -28,6 +28,3 @@ myPermission = myPermission | readPermission | writePermission;
 let message = (myPermission & readPermission) ? 'yes' : 'no';
 
 console.log(message);
-
-
-
