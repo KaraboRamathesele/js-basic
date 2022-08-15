@@ -35,20 +35,19 @@ switch (role) {
 // Loops
 
 //for-in
-const person = {
-    name: 'K',
-    age: 30
-};
+// const person = {
+//     name: 'Kari',
+//     age: 30
+// };
 
-for (let key in person);
-console.log(key, person[key]);
+// for (let key in person);
+// console.log(key);
 
 const colors = ['red', 'green', 'blue'];
-
 // for (let index in colors)
 // console.log(index, colors[index]);
 
-// for-of
+// for-of **Array
 
 for (let color of colors)
 console.log(color);
