@@ -52,4 +52,23 @@ console.log(first);
 numbers2.splice(2, 1);
 console.log(numbers2);
 
+// Empting an array
 
+let num = [1, 2, 3, 4];
+let another = num;
+
+// Solution 1
+// num =[]
+
+//  Solution 2
+// num.length = 0;
+
+// Solution 3
+// numbers.splice(0, numbers.length);
+
+// Solution 4
+while (num.length > 0)
+  num.pop();
+
+console.log(num);
+console.log(another);
