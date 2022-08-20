@@ -31,8 +31,25 @@ const courses = [
     { id: 2, name: 'b' },
 ];
 
-const course = courses.find(function(course) {
-    return course.name === 'a';
-});
-
+// const course = courses.find(function(course) {
+//     return course.name === 'a';
+// });
+const course = courses.find (course => course.name === 'a');
 console.log(course);
+
+// Removing elements
+const numbers2 = [2, 4, 6, 8, 10, 12, 14];
+
+// End
+const last = numbers2.pop();
+console.log(numbers2);
+
+// Beginning
+const first = numbers2.shift();
+console.log(first);
+
+// Middle
+numbers2.splice(2, 1);
+console.log(numbers2);
+
+
