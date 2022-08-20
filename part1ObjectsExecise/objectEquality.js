@@ -10,5 +10,11 @@ function Address(street, city, zipCode) {
 }
 
 function areEqual(address1, address2) {
-    
+    return address.street === address2.street &&
+    address1.city === address2 &&
+    address.zipCode === address2.zipCode;
+}
+
+function areSame(address1, address2) {
+    return address1 === address2;  
 }
