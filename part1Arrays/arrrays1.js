@@ -78,10 +78,13 @@ console.log(another);
 const oddNumbers = [2, 4, 6, 8, 10];
 const evenNumbers = [1, 3, 5, 7, 9];
 
+const joined = oddNumbers.join(',');
+console.log(joined);
+
 // const combined = oddNumbers.concat(evenNumbers);
 // console.log(combined);
-const combined = oddNumbers(...oddNumbers, ...evenNumbers);
-console.log(combined);
 
 const slice = combined.slice(2,8);
 console.log(slice);
+
+
