@@ -72,3 +72,16 @@ while (num.length > 0)
 
 console.log(num);
 console.log(another);
+
+// Joining Arrays
+
+const oddNumbers = [2, 4, 6, 8, 10];
+const evenNumbers = [1, 3, 5, 7, 9];
+
+// const combined = oddNumbers.concat(evenNumbers);
+// console.log(combined);
+const combined = oddNumbers(...oddNumbers, ...evenNumbers);
+console.log(combined);
+
+const slice = combined.slice(2,8);
+console.log(slice);
