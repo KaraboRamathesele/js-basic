@@ -115,3 +115,25 @@ subjects.sort(function(a, b) {
 });
 
 console.log(subjects)
+
+// every and some
+
+const y = [1, 2, 3];
+
+// const allPositive = y.every(function(value) {
+//   return value >= 0;
+// });
+
+const atLeastSomePositive = y.some(function(value) {
+  return value >= 0;
+});
+
+console.log(atLeastSomePositive);
+
+// Filtering Array
+
+const x = [1, -1, 2, 3];
+
+const filtered = x.filter(value => value >= 0);
+
+console.log(filtered);
