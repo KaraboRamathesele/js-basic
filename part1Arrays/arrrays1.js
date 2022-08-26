@@ -84,8 +84,8 @@ console.log(joined);
 // const combined = oddNumbers.concat(evenNumbers);
 // console.log(combined);
 
-const slice = combined.slice(2,8);
-console.log(slice);
+// const slice = combined.slice(2,8);
+// console.log(slice);
 
 // Sorting Array
 
@@ -94,7 +94,7 @@ amanumber.sort();
 console.log(amanumber);
 
 amanumber.reverse();
-console.log(amamunber);
+console.log(amanumber);
 
 const subjects = [
   { id: 1, name: 'Node.js' },
@@ -137,3 +137,163 @@ const x = [1, -1, 2, 3];
 const filtered = x.filter(value => value >= 0);
 
 console.log(filtered);
+
+// Mapping an Array
+
+// MApping to string
+// const items = filtered.map(value => '<li>' + value + '</li>');
+// const html = '<ul>' + items.join('') + '</ul>'; console.log(html);
+
+// Mapping to object
+
+const items = filtered.map(value => {
+  const obj2 = { value: value };
+  return obj2;
+});
+
+console.log (items);
+
+// Reducing an Array
+
+const numnum = [1,-1, 2, 3];
+
+// let sum = 0;
+// for(let n of numnum)
+//   sum += n;
+
+
+// a = 0, c = 1 => a = 1
+// a = 1, c = -1 => a = 0
+// a = 0, c = 2 => a = 2
+// a = 2, c = 3 => a = 5
+let sum = numnum.reduce((accumulator, currentValue) => accumulator + currentValue);
+
+console.log(sum);
+
+// Exercise 1 
+
+const  dinomoro = arrayFromRange(1, 4);
+
+console.log(dinomoro);
+
+function arrayFromRange(min, max) {
+  let output = [];
+  for ( i = min; i <= max; i++)
+    output.push(i);
+  return output;
+}
+
+// Exercise 2 
+
+const monet = [1, 2, 2, 4, 6];
+
+console.log(includes(monet, 4));
+
+function includes(array, searchElement) {
+  for (let element of array)
+    if (element === searchElement)
+      return true;
+  return false;
+}
+
+// Exercise 3 
+
+const bob = [1, 2, 3, 5, 4];
+
+const theDragQueen = except(bob, [1]);
+
+console.log(theDragQueen);
+
+function except(array, excluded) {
+  const output = [];
+  for (let element of array)
+    if (!excluded.includes(element))
+      output.push(element);
+    return output;
+}
+
+// Exercise 4 Moving an Element
+
+const jaida = [1, 2, 3, 4, 5];
+
+const output = move(jaida, 0, 4);
+console.log(output);
+
+function move(array, index, offset) {
+const position = index + offset;
+if (position >= array.length || position < 0) {
+  console.error('Invalid Offset.');
+  return;
+}
+
+  const output = [...array];
+  const element = output.splice(index, 1)[0];
+  output.splice(position, 0, element);
+  return output;
+}
+
+// Exercise 5 count occurences
+const heidi = [1, 2, 3, 4, 5, 5, 1];
+
+const count = countOccurrences(heidi, 1);
+
+console.log(count);
+
+function countOccurrences(array, searchElement) {
+  // let count = 0;
+  // for (let element of array)
+  //   if (element === searchElement)
+  //     count++;
+  // return count;
+
+  return array.reduce((accumulator, current) => {
+    const occurence = (current === searchElement) ? 1 : 0;
+    console.log(accumulator, current, searchElement);
+    return accumulator + occurence;
+  }, 0);
+}
+
+// Exercise 6
+const lala = [1, 2, 3, 4, 7];
+
+const max = getMax(lala);
+console.log(max);
+
+function getMax(array) {
+  if (array.length === 0) return undefined;
+
+  // let max = array [0];
+
+  // for (let i = 1; i < array.length; i++)
+  //   if (array[i] > max)
+  //     max = array[i];
+
+  // return max;
+
+  return array.reduce((accumulator, current) => {
+    if (current > accumulator) return current;
+    return accumulator;
+  });
+}
+
+// Exercise
+
+const movies = [
+  { title: 'a', year: '2018', rating: 4.5 },
+  { title: 'b', year: '2018', rating: 4.7 },
+  { title: 'c', year: '2018', rating: 3 },
+  { title: 'd', year: '2017', rating: 4.5 },
+];
+
+// All movies in 2018 with rating > 4
+// Sort by rating
+// Descending order
+// Pick title
+
+const titles = movies
+  .filter(m => m.year === 2018 && m.rating >= 4)
+  .sort((a, b) => a.rating - b.rating)
+  .reverse()
+  .map(m => m.title)
+
+console.log(titles);
