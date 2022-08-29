@@ -26,7 +26,7 @@ const person = {
     lastName: 'Ramathesele',
     // old-way fullName: function() {},
     get fullName() {
-        return `${person.firstName} ${person.lastName}`
+        return `${person.firstName} ${person.lastName}`;
     },
     set fullName(value) {
         const parts = value.split(' ');
@@ -42,7 +42,7 @@ console.log(person);
 // getters ==> access properties in an obj
 // setter ==> change (mutate) them
 
-//ARROW HANDLING -- TRY AND CATCH
+//ARROW HANDLING -- TRY AND CATCH ( Error handling)
 
 const person2 = {
     firstName: 'Karabo',
@@ -56,6 +56,8 @@ const person2 = {
           throw new Error('value is not a string.'); // exception
 
         const parts = value.split(' ');
+        if (parts.length !== 2)
+          throw new Error('Enter 1st amd last name.');
         this.firstName = parts[0];
         this.lastName = parts[1];
     }
@@ -68,3 +70,8 @@ catch (e) {
     alert(e);
 }
 console.log(person2);
+
+// Local VS Global scope
+// Scope is the reference point in code to find where variable is defined
+
+
